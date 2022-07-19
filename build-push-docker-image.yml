@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: default
+  name: Default
   vmImage: ubuntu-latest
 
 resources:
@@ -17,8 +17,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
