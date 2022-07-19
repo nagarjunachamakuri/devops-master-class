@@ -25,3 +25,11 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/jenkins/currency-exchange-microservice/Dockerfile'
         tags: |
           $(tag)
+  - job: push
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerdevops'
+        repository: '8985432404/test'
+        command: 'push'
+  
